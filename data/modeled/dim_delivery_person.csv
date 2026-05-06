@@ -1,0 +1,51 @@
+delivery_person_id,age,avg_rating,vehicle_type
+1,20,3.8,Electric Scooter
+2,36,3.9,Scooter
+3,43,4.6,Motorcycle
+4,20,4.8,Bicycle
+5,30,4.1,Electric Scooter
+6,28,4.4,Motorcycle
+7,40,3.7,Scooter
+8,41,3.2,Scooter
+9,40,4.7,Electric Scooter
+10,49,4.0,Scooter
+11,41,3.3,Scooter
+12,38,4.7,Motorcycle
+13,31,3.5,Electric Scooter
+14,33,4.8,Electric Scooter
+15,21,3.1,Bicycle
+16,47,4.8,Electric Scooter
+17,38,3.9,Motorcycle
+18,42,4.7,Scooter
+19,44,4.9,Scooter
+20,47,3.6,Motorcycle
+21,31,4.1,Motorcycle
+22,28,4.3,Bicycle
+23,32,3.5,Scooter
+24,23,3.9,Scooter
+25,49,4.6,Scooter
+26,47,3.6,Scooter
+27,44,3.1,Motorcycle
+28,48,3.0,Electric Scooter
+29,38,4.4,Electric Scooter
+30,35,4.6,Bicycle
+31,41,4.9,Motorcycle
+32,23,4.5,Motorcycle
+33,23,4.7,Electric Scooter
+34,23,4.4,Motorcycle
+35,21,4.9,Motorcycle
+36,24,3.9,Scooter
+37,39,4.2,Motorcycle
+38,27,3.7,Bicycle
+39,21,4.1,Scooter
+40,46,4.0,Bicycle
+41,34,3.2,Scooter
+42,20,4.3,Bicycle
+43,28,4.9,Scooter
+44,21,3.5,Bicycle
+45,47,3.1,Electric Scooter
+46,30,3.3,Scooter
+47,35,3.2,Electric Scooter
+48,31,3.2,Scooter
+49,48,4.4,Electric Scooter
+50,32,4.5,Scooter

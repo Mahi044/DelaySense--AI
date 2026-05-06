@@ -1,0 +1,180 @@
+restaurant_id,restaurant_name,cuisine_type
+1,Hangawi,Korean
+2,Blue Ribbon Sushi Izakaya,Japanese
+3,Cafe Habana,Mexican
+4,Blue Ribbon Fried Chicken,American
+5,Dirty Bird to Go,American
+6,Tamarind TriBeCa,Indian
+7,The Meatball Shop,Italian
+8,Barbounia,Mediterranean
+9,Anjappar Chettinad,Indian
+10,Bukhara Grill,Indian
+11,Big Wong Restaurant _¤¾Ñ¼,Chinese
+12,Empanada Mama (closed),Mexican
+13,Pylos,Mediterranean
+14,Lucky's Famous Burgers,American
+15,Shake Shack,American
+16,Sushi of Gari,Japanese
+17,RedFarm Hudson,Chinese
+18,Blue Ribbon Sushi,Japanese
+19,Five Guys Burgers and Fries,American
+20,Tortaria,Mexican
+21,Cafe Mogador,Middle Eastern
+22,Otto Enoteca Pizzeria,Italian
+23,Vezzo Thin Crust Pizza,Italian
+24,Sushi of Gari 46,Japanese
+25,The Kati Roll Company,Indian
+26,Klong,Thai
+27,5 Napkin Burger,American
+28,TAO,Japanese
+29,Parm,Italian
+30,Sushi Samba,Japanese
+31,Haru Gramercy Park,Japanese
+32,Chipotle Mexican Grill $1.99 Delivery,Mexican
+33,RedFarm Broadway,Chinese
+34,Cafeteria,American
+35,DuMont Burger,American
+36,Sarabeth's East,American
+37,Hill Country Fried Chicken,Southern
+38,Bistango,Italian
+39,Jack's Wife Freda,Mediterranean
+40,Mamoun's Falafel,Mediterranean
+41,Prosperity Dumpling,Chinese
+42,Blue Ribbon Sushi Bar & Grill,Japanese
+43,Westville Hudson,American
+44,Blue Ribbon Brooklyn,American
+45,Nobu Next Door,Japanese
+46,Osteria Morini,Italian
+47,Haandi,Indian
+48,Benihana,Japanese
+49,Han Dynasty,Chinese
+50,Chote Nawab,Indian
+51,Mission Cantina,Mexican
+52,Xi'an Famous Foods,Chinese
+53,Rubirosa,Italian
+54,Joe's Shanghai _Àü£¾÷´,Chinese
+55,Bareburger,American
+56,The Odeon,American
+57,Pongsri Thai,Thai
+58,Yama Japanese Restaurant,Japanese
+59,Momoya,Japanese
+60,The Meatball Shop,American
+61,Balthazar Boulangerie,French
+62,CafÌ© China,Chinese
+63,Boqueria,Spanish
+64,Song Thai Restaurant & Bar,Thai
+65,Five Leaves,American
+66,Pinto Nouveau Thai Bistro,Thai
+67,Amy Ruth's,Southern
+68,Pepe Giallo,Italian
+69,indikitch,Indian
+70,Yama 49,Japanese
+71,Piccolo Angolo,Italian
+72,Pepe Rosso To Go,Italian
+73,L'Express,French
+74,Amma,Indian
+75,Delicatessen,American
+76,S'MAC,American
+77,Vanessa's Dumplings,Chinese
+78,Bhatti Indian Grill,Indian
+79,Taro Sushi,Japanese
+80,Donburi-ya,Japanese
+81,Hatsuhana,Japanese
+82,Samurai Mama,Japanese
+83,Waverly Diner,American
+84,Tarallucci e Vino Restaurant,Italian
+85,P.J. Clarke's,American
+86,Lantern Thai Kitchen,Thai
+87,ilili Restaurant,Middle Eastern
+88,The Smile,American
+89,Vanessa's Dumpling House,Chinese
+90,Bubby's ,American
+91,Woorijip,Korean
+92,Dirty Bird To Go (archived),American
+93,Haveli Indian Restaurant,Indian
+94,Dos Caminos,Mexican
+95,da Umberto,Italian
+96,Sushi of Gari Tribeca,Japanese
+97,Burger Joint,American
+98,Room Service,Thai
+99,Sarabeth's Restaurant,American
+100,Xe May Sandwich Shop,Vietnamese
+101,Hibino,Japanese
+102,Mira Sushi,Japanese
+103,Melt Shop,American
+104,J. G. Melon,American
+105,Hummus Place,Middle Eastern
+106,Saravanaa Bhavan,Indian
+107,Friend of a Farmer,American
+108,The Loop,Japanese
+109,Balade,Middle Eastern
+110,Posto,Italian
+111,Terakawa Ramen,Japanese
+112,Kambi Ramen House,Japanese
+113,Wo Hop Restaurant,Chinese
+114,Spice Thai,Thai
+115,Dickson's Farmstand Meats,American
+116,UVA Wine Bar & Restaurant,Italian
+117,Serafina Fabulous Pizza,Italian
+118,Gaia Italian Cafe,Italian
+119,Chola Eclectic Indian Cuisine,Indian
+120,Hot Kitchen,Chinese
+121,Junoon,Indian
+122,Ravagh Persian Grill,Middle Eastern
+123,Rohm Thai,Thai
+124,Dig Inn Seasonal Market,American
+125,Olea,Mediterranean
+126,Cho Dang Gol,Korean
+127,El Parador Cafe,Mexican
+128,Socarrat Paella Bar,Spanish
+129,Don's Bogam BBQ & Wine Bar,Korean
+130,Alidoro,American
+131,Tony's Di Napoli,Italian
+132,Cipriani Le Specialita,Italian
+133,Sushi Choshi,Japanese
+134,Kanoyama,Japanese
+135,V-Nam Cafe,Vietnamese
+136,Zero Otto Nove,Italian
+137,Dos Caminos Soho,Mexican
+138,Go! Go! Curry!,Japanese
+139,La Follia,Italian
+140,Izakaya Ten,Japanese
+141,12 Chairs,Middle Eastern
+142,Philippe Chow,Chinese
+143,The MasalaWala,Indian
+144,brgr,American
+145,Carmine's,Italian
+146,Asuka Sushi,Japanese
+147,Aurora,Italian
+148,Sarabeth's,American
+149,Crema Restaurante,Mexican
+150,Big Daddy's,American
+151,Moonstruck on Second,American
+152,Cafe de La Esquina,Mexican
+153,Olive Garden,Italian
+154,67 Burger,American
+155,Tres Carnes,Mexican
+156,Schnipper's Quality Kitchen,American
+157,Nha Trang One,Vietnamese
+158,Market Table,American
+159,Galli Restaurant,Italian
+160,Hampton Chutney Co.,Thai
+161,Byblos Restaurant,Middle Eastern
+162,Grand Sichuan International,Chinese
+163,Le Grainne Cafe,French
+164,Il Bambino,Italian
+165,Kori Restaurant and Bar,Korean
+166,DespaÌ±a,Spanish
+167,Lamarca Pasta,Italian
+168,Lucky Strike,American
+169,Paul & Jimmy's,Italian
+170,Hunan Manor,Chinese
+171,Coppola's East,Italian
+172,Emporio,Italian
+173,Wa Jeal,Chinese
+174,Le Zie 2000 Trattoria,Italian
+175,Rye House,American
+176,Hiroko's Place,Japanese
+177,Frank Restaurant,Italian
+178,Sarabeth's West,American
+179,'wichcraft,American
