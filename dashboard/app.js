@@ -1,5 +1,5 @@
 /* ================================================================
-   DeliveryIQ — SaaS Dashboard Engine v2
+   DelaySense AI — SaaS Dashboard Engine v2
    ML Prediction + Heatmap + Export + Insights + All Charts
    ================================================================ */
 
@@ -401,7 +401,7 @@ function initLeafletMap() {
         attribution: '© OpenStreetMap', maxZoom: 18,
     }).addTo(leafletMap);
 
-    // Simulate delivery points across NYC based on data
+    // Delivery points across Bangalore based on data
     const rows = getFilteredRows();
     renderMapMarkers(rows);
 }
@@ -492,16 +492,65 @@ function renderInsights() {
 function renderCuisineDelayChart() {
     if (typeof ML_DATA === 'undefined' || !ML_DATA.cuisine_delays) return;
     destroy('cuisineDelay');
-    const entries = Object.entries(ML_DATA.cuisine_delays).sort((a, b) => b[1] - a[1]);
-    const labels = entries.map(e => e[0]);
-    const values = entries.map(e => e[1]);
-    const colors = values.map(v => v > 0 ? C.red(0.6) : C.green(0.6));
+    const entries = Object.entries(ML_DATA.cuisine_delays)
+        .filter(e => e[0].length < 35) // skip excessively long names
+        .sort((a, b) => b[1] - a[1]);
+
+    // Show top 8 slowest and top 7 fastest for a diverging view
+    const top8 = entries.slice(0, 8);
+    const bottom7 = entries.slice(-7).reverse();
+    const selected = [...top8, ...bottom7];
+
+    const labels = selected.map(e => e[0].length > 28 ? e[0].slice(0, 26) + '…' : e[0]);
+    const values = selected.map(e => +e[1].toFixed(1));
+    const colors = values.map(v => {
+        if (v > 20) return C.red(0.75);
+        if (v > 10) return C.amber(0.7);
+        if (v > 0) return C.blue(0.55);
+        return C.green(0.7);
+    });
 
     charts.cuisineDelay = new Chart(document.getElementById('cuisineDelayChart'), {
         type: 'bar',
-        data: { labels, datasets: [{ label: 'Avg Delay (min)', data: values, backgroundColor: colors, borderRadius: 8, barPercentage: 0.55 }] },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: getTooltip() },
-            scales: { x: { title: { display: true, text: 'Avg Delay (min)', color: getTextColor() }, grid: getGrid(), border: getBorder() }, y: { grid: { display: false }, border: getBorder() } } }
+        data: {
+            labels,
+            datasets: [{
+                label: 'Avg Delay (min)',
+                data: values,
+                backgroundColor: colors,
+                borderRadius: 6,
+                barPercentage: 0.6
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    ...getTooltip(),
+                    callbacks: {
+                        label: ctx => {
+                            const v = ctx.parsed.x;
+                            return v > 0 ? `+${v} min delay` : `${v} min (early)`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Avg Delay (min)', color: getTextColor() },
+                    grid: getGrid(),
+                    border: getBorder()
+                },
+                y: {
+                    grid: { display: false },
+                    border: getBorder(),
+                    ticks: { font: { size: 10 } }
+                }
+            }
+        }
     });
 }
 
@@ -526,7 +575,7 @@ function exportCSV() {
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `deliveryiq_export_${rows.length}_orders.csv`;
+    link.download = `delaysense_ai_export_${rows.length}_orders.csv`;
     link.click();
     URL.revokeObjectURL(link.href);
     showToast(`Exported ${rows.length} orders to CSV`, 'success');
@@ -646,5 +695,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAll();
 
     // Welcome toast
-    setTimeout(() => showToast(`Dashboard loaded · ${allRows.length.toLocaleString()} orders ready`, 'success'), 500);
+    setTimeout(() => showToast(`DelaySense AI loaded · ${allRows.length.toLocaleString()} orders ready`, 'success'), 500);
 });
