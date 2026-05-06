@@ -180,10 +180,10 @@ def main():
     with open(output_path, "w") as f:
         f.write(f"const ML_DATA = {json.dumps(prediction_data, indent=2)};")
 
-    print(f"\n  ✓ Exported ML data to {output_path}")
-    print(f"  ✓ {len(insights)} auto-generated insights")
-    print(f"  ✓ {len(corr_cols)}×{len(corr_cols)} correlation matrix")
-    print(f"  ✓ Linear model with {len(features)} features (R²={r2:.4f})")
+    print(f"\n  > Exported ML data to {output_path}")
+    print(f"  > {len(insights)} auto-generated insights")
+    print(f"  > {len(corr_cols)}x{len(corr_cols)} correlation matrix")
+    print(f"  > Linear model with {len(features)} features (R2={r2:.4f})")
 
 
 if __name__ == "__main__":

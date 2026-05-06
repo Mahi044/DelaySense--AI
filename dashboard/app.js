@@ -90,7 +90,7 @@ function renderKPIs(rows) {
     anim('kpiDelay', avg(delays), 1, ' min');
     anim('kpiOnTime', onTime, 1, '%');
     anim('kpiDelivery', avg(delTimes), 1, ' min');
-    setEl('kpiCost', `$${avg(costs).toFixed(2)}`);
+    setEl('kpiCost', `₹${avg(costs).toFixed(2)}`);
     setEl('kpiOrdersSub', n === allRows.length ? 'entire dataset' : `filtered from ${allRows.length.toLocaleString()}`);
     const d = avg(delays);
     setEl('kpiDelaySub', d <= 0 ? '↑ ahead of schedule' : '↓ behind schedule');
@@ -224,7 +224,7 @@ function renderRestaurantTable(rows) {
     const g=group(rows,'restaurant_name');
     const ranked=Object.entries(g).map(([name,arr])=>({name,count:arr.length,rating:avgOf(arr,'rating'),delay:avgOf(arr,'delivery_delay'),cost:avgOf(arr,'cost')})).sort((a,b)=>b.count-a.count).slice(0,8);
     el.innerHTML = `<table class="rest-table"><thead><tr><th>Restaurant</th><th>Orders</th><th>Rating</th><th>Delay</th><th>Avg Cost</th></tr></thead><tbody>${
-        ranked.map(r=>`<tr><td>${r.name}</td><td>${r.count}</td><td>⭐ ${r.rating.toFixed(2)}</td><td>${r.delay.toFixed(1)} min</td><td>$${r.cost.toFixed(2)}</td></tr>`).join('')
+        ranked.map(r=>`<tr><td>${r.name}</td><td>${r.count}</td><td>⭐ ${r.rating.toFixed(2)}</td><td>${r.delay.toFixed(1)} min</td><td>₹${r.cost.toFixed(2)}</td></tr>`).join('')
     }</tbody></table>`;
 }
 
@@ -276,7 +276,7 @@ function setupPrediction() {
         { id: 'predDist', valId: 'predDistVal', fmt: v => `${parseFloat(v).toFixed(1)} km` },
         { id: 'predPrep', valId: 'predPrepVal', fmt: v => `${v} min` },
         { id: 'predHour', valId: 'predHourVal', fmt: v => { const h = parseInt(v); return h > 12 ? `${h-12}:00 PM` : h === 12 ? '12:00 PM' : `${h}:00 AM`; } },
-        { id: 'predCost', valId: 'predCostVal', fmt: v => `$${v}` },
+        { id: 'predCost', valId: 'predCostVal', fmt: v => `₹${v}` },
     ];
     sliders.forEach(s => {
         const el = document.getElementById(s.id);
@@ -396,7 +396,7 @@ function initLeafletMap() {
     const mapEl = document.getElementById('leafletMap');
     if (!mapEl) return;
 
-    leafletMap = L.map('leafletMap').setView([40.7580, -73.9855], 12);
+    leafletMap = L.map('leafletMap').setView([12.9716, 77.5946], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap', maxZoom: 18,
     }).addTo(leafletMap);
@@ -411,12 +411,11 @@ function renderMapMarkers(rows) {
     leafletMarkers.forEach(m => leafletMap.removeLayer(m));
     leafletMarkers = [];
 
-    const BASE_LAT = 40.7580, BASE_LNG = -73.9855;
     const sample = rows.length > 200 ? rows.filter((_, i) => i % Math.ceil(rows.length / 200) === 0) : rows;
 
     sample.forEach(r => {
-        const lat = BASE_LAT + (Math.random() - 0.5) * 0.12;
-        const lng = BASE_LNG + (Math.random() - 0.5) * 0.15;
+        const lat = r.latitude || (12.9716 + (Math.random() - 0.5) * 0.12);
+        const lng = r.longitude || (77.5946 + (Math.random() - 0.5) * 0.15);
         const color = r.delay_category === 'Early' ? '#10b981' :
                       r.delay_category === 'On Time' ? '#3b82f6' :
                       r.delay_category === 'Slightly Delayed' ? '#f59e0b' : '#e74c3c';

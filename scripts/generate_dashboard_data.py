@@ -20,20 +20,14 @@ def main():
     dim_rest = pd.read_csv(os.path.join(MODEL_DIR, "dim_restaurant.csv"))
     df = df.merge(dim_rest, on="restaurant_id", how="left")
 
-    # Load sentiment data
-    sent_path = os.path.join(CLEAN_DIR, "foodhub_orders_with_sentiment.csv")
-    if os.path.exists(sent_path):
-        df_sent = pd.read_csv(sent_path)
-        if "sentiment" in df_sent.columns:
-            df["sentiment"] = df_sent["sentiment"].values[:len(df)]
-            df["sentiment_score"] = df_sent["sentiment_score"].values[:len(df)]
+
 
     # Export per-row data for client-side filtering
     row_cols = [
         "order_id", "cost", "rating", "food_preparation_time", "delivery_time",
         "total_time", "delivery_delay", "order_hour", "time_of_day", "peak_hour_flag",
         "traffic_level", "delay_category", "day_of_the_week", "distance_km",
-        "cuisine_type", "restaurant_name",
+        "cuisine_type", "restaurant_name", "latitude", "longitude"
     ]
     if "sentiment" in df.columns:
         row_cols += ["sentiment", "sentiment_score"]
@@ -60,8 +54,8 @@ def main():
     with open(output_path, "w") as f:
         f.write(f"const RAW_DATA = {json.dumps(data)};")
 
-    print(f"✓ Dashboard data exported to {output_path}")
-    print(f"  Rows: {len(rows)}, Cuisines: {len(data['cuisines'])}, Restaurants: {len(data['restaurants'])}")
+    print(f"  > Dashboard data exported to {output_path}")
+    print(f"  > Rows: {len(rows)}, Cuisines: {len(data['cuisines'])}, Restaurants: {len(data['restaurants'])}")
 
 
 if __name__ == "__main__":
